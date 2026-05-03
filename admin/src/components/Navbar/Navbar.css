@@ -1,13 +1,108 @@
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 4%;
-}
-.navbar .logo {
-    width: max(10%,80px);
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=DM+Sans:wght@400;500;600&display=swap');
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 64px;
+  background: rgba(10, 10, 15, 0.95);
+  border-bottom: 1px solid rgba(255, 61, 61, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(255, 61, 61, 0.08);
 }
 
-.navbar .profile{
-    width: 40px;
+/* Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+
+.logo-icon { font-size: 24px; }
+
+.logo-text {
+  font-family: 'Orbitron', monospace;
+  font-size: 20px;
+  font-weight: 900;
+  color: #ff3d3d;
+  text-shadow: 0 0 20px rgba(255, 61, 61, 0.8), 0 0 40px rgba(255, 61, 61, 0.4);
+  letter-spacing: 3px;
+}
+
+.logo-badge {
+  font-family: 'Orbitron', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #ff3d3d, #ff6b35);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 2px;
+  box-shadow: 0 0 12px rgba(255, 61, 61, 0.5);
+}
+
+/* Center */
+.navbar-center { display: flex; align-items: center; }
+
+.nav-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: #00ff88;
+  font-weight: 600;
+  background: rgba(0, 255, 136, 0.08);
+  padding: 6px 14px;
+  border-radius: 50px;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.6);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #00ff88;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* Right */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-time {
+  font-family: 'Orbitron', monospace;
+  font-size: 13px;
+  color: rgba(255, 61, 61, 0.7);
+  letter-spacing: 2px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff3d3d, #ff6b35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 16px rgba(255, 61, 61, 0.5);
+  transition: 0.2s;
+}
+.avatar:hover { box-shadow: 0 0 24px rgba(255, 61, 61, 0.8); transform: scale(1.05); }

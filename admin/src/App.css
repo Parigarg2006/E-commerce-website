@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --red: #ff3d3d;
+  --red-glow: rgba(255, 61, 61, 0.4);
+  --orange: #ff6b35;
+  --bg: #0a0a0f;
+  --bg2: #0f0f1a;
+  --bg3: #13131f;
+  --card: #16161f;
+  --border: rgba(255, 61, 61, 0.15);
+  --border-glow: rgba(255, 61, 61, 0.4);
+  --text: #f0f0ff;
+  --text-mid: #a0a0c0;
+  --text-dim: #606080;
+  --green: #00ff88;
+  --green-glow: rgba(0, 255, 136, 0.3);
+  --blue: #00cfff;
+  --blue-glow: rgba(0, 207, 255, 0.3);
+  --yellow: #ffd700;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.admin-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.app-content {
+  display: flex;
+  flex: 1;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg2); }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 3px; }

@@ -1,13 +1,25 @@
 import React from 'react'
 import './Navbar.css'
-import { assets } from '../../assets/assets'
 
 const Navbar = () => {
   return (
-    <div className='navbar'>
-      <img className='logo' src={assets.logo} alt="" />
-      <img className='profile' src={assets.profile_image} alt="" />
-    </div>
+    <nav className='navbar'>
+      <div className="navbar-logo">
+        <span className="logo-icon">🍅</span>
+        <span className="logo-text">TOMATO</span>
+        <span className="logo-badge">ADMIN</span>
+      </div>
+      <div className="navbar-center">
+        <div className="nav-status">
+          <span className="pulse-dot"></span>
+          <span>System Online</span>
+        </div>
+      </div>
+      <div className="navbar-right">
+        <div className="nav-time" id="nav-time"></div>
+        <div className="avatar">P</div>
+      </div>
+    </nav>
   )
 }
 

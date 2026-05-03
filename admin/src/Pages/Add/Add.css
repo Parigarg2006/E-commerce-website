@@ -1,55 +1,170 @@
-.add {
-    width: 70%;
-    margin-left: max(5vw, 25px);
-    margin-top: 50px;
-    color: #6d6d6d;
-    font-size: 16px;
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+.add-page {
+  flex: 1;
+  padding: 32px;
+  background: #0a0a0f;
+  min-height: calc(100vh - 64px);
+  font-family: 'DM Sans', sans-serif;
+  overflow-y: auto;
 }
 
-.add form {
-    gap: 20px;
+.add-header { margin-bottom: 32px; }
+
+.page-title {
+  font-family: 'Orbitron', monospace;
+  font-size: 28px;
+  font-weight: 900;
+  color: #ff3d3d;
+  text-shadow: 0 0 20px rgba(255,61,61,0.7), 0 0 40px rgba(255,61,61,0.3);
+  letter-spacing: 4px;
+  margin-bottom: 6px;
 }
 
-/* 🔥 FIXED IMAGE SHAPE HERE */
-.add-img-upload img {
-    width: 120px;
-    height: 120px;          /* force square */
-    object-fit: cover;      /* prevent stretch */
-    border-radius: 8px;     /* consistent shape */
-    background-color: #fff; /* fills empty space if image is circular */
+.page-sub { font-size: 13px; color: #606080; }
+
+.add-form {
+  background: #13131f;
+  border-radius: 16px;
+  border: 1px solid rgba(255,61,61,0.1);
+  padding: 32px;
+  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
 }
 
-.add-product-name,
-.add-product-description {
-    width: max(40%, 280px);
+.add-form::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,61,61,0.5), transparent);
 }
 
-.add-product-name input,
-.add-product-description textarea {
-    padding: 10px;
+.add-section { display: flex; flex-direction: column; gap: 8px; flex: 1; }
+
+.add-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.field-label {
+  font-family: 'Orbitron', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  color: rgba(255,61,61,0.5);
+  letter-spacing: 2px;
 }
 
-.add-category-price {
-    display: flex;
-    gap: 30px;
+/* Upload */
+.upload-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  border: 1.5px dashed rgba(255,61,61,0.25);
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: 0.25s;
+  background: rgba(255,61,61,0.03);
+}
+.upload-area:hover {
+  border-color: rgba(255,61,61,0.5);
+  background: rgba(255,61,61,0.06);
+}
+.upload-area:hover .upload-glow { opacity: 1; }
+
+.upload-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255,61,61,0.08), transparent 70%);
+  opacity: 0;
+  transition: 0.25s;
 }
 
-.add-category-price select,
-.add-category-price input {
-    max-width: 120px;
-    padding: 10px;
+.upload-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #606080;
+  font-size: 13px;
+  position: relative;
+  z-index: 1;
+}
+.upload-icon { font-size: 32px; margin-bottom: 4px; }
+.upload-hint { font-size: 11px; color: #404060; }
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
 }
 
-.add-btn {
-    max-width: 120px;
-    border: none;
-    padding: 10px;
-    background-color: black;
-    color: white;
-    cursor: pointer;
+/* Inputs */
+.dark-input {
+  background: #0a0a0f;
+  border: 1px solid rgba(255,61,61,0.15);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  color: #f0f0ff;
+  outline: none;
+  transition: 0.2s;
+  width: 100%;
+}
+.dark-input::placeholder { color: #404060; }
+.dark-input:focus {
+  border-color: rgba(255,61,61,0.5);
+  box-shadow: 0 0 16px rgba(255,61,61,0.12);
+  color: #f0f0ff;
 }
 
-/* optional hover */
-.add-btn:hover {
-    background-color: #333;
+.dark-textarea { resize: vertical; min-height: 100px; }
+
+.dark-select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ff3d3d' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
 }
+.dark-select option { background: #13131f; color: #f0f0ff; }
+
+/* Submit Button */
+.add-submit-btn {
+  position: relative;
+  background: linear-gradient(135deg, #ff3d3d, #ff6b35);
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 10px;
+  font-family: 'Orbitron', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.25s;
+  box-shadow: 0 0 20px rgba(255,61,61,0.3);
+  align-self: flex-start;
+}
+.add-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 32px rgba(255,61,61,0.5);
+}
+.add-submit-btn span { position: relative; z-index: 1; }
+.btn-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+  opacity: 0;
+  transition: 0.2s;
+}
+.add-submit-btn:hover .btn-glow { opacity: 1; }

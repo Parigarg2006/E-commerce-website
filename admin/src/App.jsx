@@ -5,20 +5,24 @@ import { Routes, Route } from 'react-router-dom'
 import Add from './Pages/Add/Add'
 import List from './Pages/List/List'
 import Orders from './Pages/Orders/Orders'
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-  
+import './App.css'
 
 const App = () => {
   return (
-    <div>
-      <ToastContainer/>
+    <div className="admin-app">
+      <ToastContainer
+        position="top-right"
+        autoClose={2000}
+        theme="dark"
+        toastStyle={{ background: '#16161f', border: '1px solid rgba(255,61,61,0.3)', color: '#f0f0ff' }}
+      />
       <Navbar />
-      <hr />
       <div className="app-content">
         <Sidebar />
         <Routes>
-          <Route path="/" element={<Add />} />   {/* ✅ ADD THIS */}
+          <Route path="/" element={<Add />} />
           <Route path="/add" element={<Add />} />
           <Route path="/list" element={<List />} />
           <Route path="/orders" element={<Orders />} />
